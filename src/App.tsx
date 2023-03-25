@@ -1,9 +1,16 @@
+import { useState } from "react"
+import { Buttons } from "./components/Buttons"
+import { Header } from "./components/Header"
+
 function App() {
 
+  const [active, setActive] = useState(0)
+
   return (
-    <div>
-      <h1>Hello, World!</h1>
-    </div>
+    <Header>
+      <h1>pomodoro</h1>
+      <Buttons active={active} setActive={setActive}/>
+    </Header>
   )
 }
 
