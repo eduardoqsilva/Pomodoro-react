@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Buttons } from "./components/Buttons"
 import { Header } from "./components/Header"
+import { Pomodoro } from "./components/Pomodoro"
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
     <Header>
       <h1>pomodoro</h1>
       <Buttons active={active} setActive={setActive}/>
+      <Pomodoro />
     </Header>
   )
 }
