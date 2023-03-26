@@ -64,3 +64,47 @@ export const TimerStatus = styled.span<TimerType>`
   transition: all 0.1s ease;
   color: ${(props) => props.hover ? '#ff7878' : '#e0e9f7'};
 `
+
+interface RoundedType {
+  porcent: number
+}
+
+export const RoundedWrapper = styled.div<RoundedType>`
+ 
+  .pie {
+    --p:${(props) => props.porcent};
+    --b:10px;
+    --c:#ff7878;
+    --w:336px;
+    
+    width:var(--w);
+    aspect-ratio:1;
+    position:relative;
+    display:inline-grid;
+    place-content:center;
+    font-size:25px;
+    font-weight:bold;
+    font-family:sans-serif;
+    justify-items: center;
+  }
+  .pie:before,
+  .pie:after {
+    content:"";
+    position:absolute;
+    border-radius:50%;
+  }
+  .pie:before {
+    inset:0;
+    transition: all 0.2s linear;
+    background:
+      radial-gradient(farthest-side,var(--c) 98%,#0000) top/var(--b) var(--b) no-repeat,
+      conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+            mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+  }
+  .pie:after {
+    inset:calc(50% - var(--b)/2);
+    background:var(--c);
+    transform:rotate(calc(var(--p)*3.6deg)) translateY(calc(55% - var(--w)/2));
+  }
+`
