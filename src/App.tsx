@@ -11,7 +11,12 @@ function App() {
     <Header>
       <h1>pomodoro</h1>
       <Buttons active={active} setActive={setActive}/>
-      <Pomodoro />
+      <Pomodoro 
+        porcent={90}
+        min={10}
+        sec={0}
+        status={'start'}
+      />
     </Header>
   )
 }
