@@ -29,7 +29,7 @@ export function useTimer(p:Array<number>, active:number):useTimeType {
     minutes: 0,
     seconds: 0,
     porcent: 100.0,
-    completed: 6,
+    completed: 0,
     status: 'start'
   })
   const [isPause, setIsPause] = useState(false)
@@ -72,7 +72,7 @@ export function useTimer(p:Array<number>, active:number):useTimeType {
               icon: icon
             })
           }else {
-            this.seconds = 1
+            this.seconds = 59
             setTimer(prev => (
               {
                 ...prev, 

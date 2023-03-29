@@ -7,7 +7,7 @@ import { useTimer } from "./hooks/useTimer"
 function App() {
 
   const [active, setActive] = useState(0)
-  const {time, func} = useTimer([1,1,15] ,active)
+  const {time, func} = useTimer([30,5,15] ,active)
 
   useEffect(() => {
     if(time.completed === 7) {
