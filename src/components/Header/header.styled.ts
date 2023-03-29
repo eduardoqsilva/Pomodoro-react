@@ -12,4 +12,5 @@ export const HeaderStyled = styled.header`
   justify-content: center;
   flex-direction: column;
   gap: 5rem;
+  padding: 1rem;
 `

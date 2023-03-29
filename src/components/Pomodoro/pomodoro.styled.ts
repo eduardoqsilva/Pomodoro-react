@@ -20,6 +20,11 @@ export const MainTimerStyled = styled.main<TimerType>`
   justify-content: center;
   position: relative;
   z-index: 0;
+
+  @media (max-width: 450px) {
+    width: 250px;
+    height: 250px;
+  }
 `
 
 export const TimerWrapperStyled = styled.div`
@@ -35,6 +40,11 @@ export const TimerWrapperStyled = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  @media (max-width: 450px) {
+    width: 230px;
+    height: 230px;
+  }
 `
 
 export const TimerStyled = styled.div`
@@ -51,6 +61,9 @@ export const TimerStyled = styled.div`
     font-weight: 600;
     font-size: 5.9375rem;
     color: #e0e9f7;
+    @media (max-width: 450px) {
+      font-size: 4rem;
+    }
   }
 `
 
@@ -59,10 +72,16 @@ export const TimerStatus = styled.span<TimerType>`
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   text-transform: uppercase;
+  text-align: center;
   font-weight: bold;
   letter-spacing: 1rem;
+  padding-left: 1rem;
   transition: all 0.1s ease;
   color: ${(props) => props.hover ? '#ff7878' : '#e0e9f7'};
+  @media (max-width: 450px) {
+    font-size: 0.8rem;
+    letter-spacing: 0.6rem;
+  }
 `
 
 interface RoundedType {
@@ -70,13 +89,18 @@ interface RoundedType {
 }
 
 export const RoundedWrapper = styled.div<RoundedType>`
- 
+  
   .pie {
     --p:${(props) => props.porcent};
     --b:10px;
     --c:#ff7878;
     --w:336px;
     
+    @media (max-width: 450px) {
+      --w:215px;
+      --b: 6px;
+    }
+
     width:var(--w);
     aspect-ratio:1;
     position:relative;

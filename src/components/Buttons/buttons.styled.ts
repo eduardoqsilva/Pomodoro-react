@@ -11,6 +11,10 @@ export const ButtonsWrapperStyled = styled.div`
   gap: 0.5rem;
 
   padding: 0.4rem;
+
+  @media (max-width: 430px) {
+    min-width: 100%;
+  }
 `
 
 
@@ -20,6 +24,7 @@ interface ButtonType {
 
 export const ButtonStyled = styled.button<ButtonType>`
   width: 100%;
+  height: 100%;
   border-radius: 40px;
   padding: 1rem;
   border: none;
@@ -34,5 +39,8 @@ export const ButtonStyled = styled.button<ButtonType>`
     ? `color: #1E213F; background-color: #ff7878;` 
     : ''
   }
-   
+  
+  @media (max-width: 430px) {
+    font-size: 0.8rem;
+  }
 `
