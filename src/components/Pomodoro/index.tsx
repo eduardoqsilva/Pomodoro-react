@@ -7,9 +7,10 @@ interface PomodoroType {
   min: number
   sec: number
   status: string
+  play: () => void
 }
 
-export function Pomodoro({porcent, min, sec, status}:PomodoroType) {
+export function Pomodoro({porcent, min, sec, status, play}:PomodoroType) {
 
   const [hover, setHover] = useState(false)
 
@@ -21,7 +22,7 @@ export function Pomodoro({porcent, min, sec, status}:PomodoroType) {
   }
 
   function handleOnclick() {
-    console.log('iniciou')
+    play()
   }
 
   return (
