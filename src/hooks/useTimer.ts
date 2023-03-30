@@ -40,7 +40,13 @@ export function useTimer(p:Array<number>, active:number):useTimeType {
       minutes: min
     }))
   }, [active])
-
+  
+  useEffect(() => {
+    setTimer(prev => ({
+      ...prev,
+      minutes: min
+    }))
+  }, [p])
   const reset = () => {
     if(timer.completed === 7) {
       setTimer({
