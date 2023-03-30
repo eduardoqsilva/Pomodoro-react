@@ -13,4 +13,12 @@ export const HeaderStyled = styled.header`
   flex-direction: column;
   gap: 5rem;
   padding: 1rem;
+
+  @media (max-height: 800px) {
+    gap: 2rem;
+
+    & > h1 {
+      display: none;
+    }
+  }
 `
