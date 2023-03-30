@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Buttons } from "./components/Buttons"
+import { Config } from "./components/ConfigApp"
 import { Header } from "./components/Header"
 import { Pomodoro } from "./components/Pomodoro"
 import { useTimer } from "./hooks/useTimer"
@@ -7,7 +8,8 @@ import { useTimer } from "./hooks/useTimer"
 function App() {
 
   const [active, setActive] = useState(0)
-  const {time, func} = useTimer([30,5,15] ,active)
+  const [customTimes, setCustomTimes] = useState([25,5,15])
+  const {time, func} = useTimer(customTimes ,active)
 
   useEffect(() => {
     if(time.completed === 7) {
@@ -25,6 +27,15 @@ function App() {
     }
   },[time.completed])
 
+  useEffect(() => {
+    const values = localStorage.getItem('values')
+    if(values !== null) {
+      setCustomTimes(JSON.parse(values))
+      console.log(JSON.parse(values))
+    }
+  }, [])
+  
+
   return (
     <Header>
       <h1>pomodoro</h1>
@@ -36,6 +47,7 @@ function App() {
         status={time.status}
         play={func.playAndPause}
       />
+      <Config setCustomTimes={setCustomTimes}/>
     </Header>
   )
 }
